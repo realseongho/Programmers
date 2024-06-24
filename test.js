@@ -1,21 +1,19 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/181830
-function solution(array) {
-  let row = array.length
-  let col = array[0].length
-  let i, j
-  if (row < col) {
-    for (i = row; i < col; i++) {
-      array.push([0])
-      for (j = 0; j < col - 1; j++) array[i].push(0)
-    }
-  } else if (row > col)
-    for (i = 0; i < row; i++) for (j = col; j < row; j++) array[i].push(0)
-
-  return array
+// https://school.programmers.co.kr/learn/courses/30/lessons/120869
+function solution(spell, dic) {
+  let answer = 2
+  dic.forEach((data) => {
+    if (answer == 1) return answer
+    let sum = 0
+    spell.forEach((ch) => {
+      if (data.includes(ch)) sum++
+      if (sum >= spell.length) {
+        answer = 1
+        return
+      }
+    })
+  })
+  return answer
 }
 console.log(
-  solution([
-    [57, 192, 534, 2],
-    [9, 345, 192, 999],
-  ]),
+  solution(['s', 'o', 'm', 'd'], ['moos', 'dzx', 'smm', 'sunmmo', 'som']),
 )
