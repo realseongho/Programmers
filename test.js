@@ -7,8 +7,8 @@ function solution(picture, k) {
     count++
     for (i = 0; i < pic.length; i++)
       for (let j = 0; j < k; j++)
-        picture2[index * k] = picture2[index * k].concat(pic[i]) // 행*k
-    while (count < (index + 1) * k) picture2[count++] = picture2[index * k] // 열*k
+        picture2[index * k] = picture2[index * k].concat(pic[i]) // 열*k
+    while (count < (index + 1) * k) picture2[count++] = picture2[index * k] // 행*k
   })
   return picture2
 }
