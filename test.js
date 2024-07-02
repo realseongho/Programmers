@@ -1,9 +1,6 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/181943
-function solution(my_string, overwrite_string, s) {
-  my_string = my_string.split('')
-  overwrite_string = overwrite_string.split('')
-  for (let i = s, j = 0; i < s + overwrite_string.length; i++, j++) {
-    my_string[i] = overwrite_string[j]
-  }
-  return my_string.join('')
+// https://school.programmers.co.kr/learn/courses/30/lessons/120860
+function solution(dots) {
+  for (let i = 1; i < 4; i++)
+    if (dots[i][0] != dots[0][0] && dots[i][1] != dots[0][1])
+      return Math.abs((dots[0][0] - dots[i][0]) * (dots[0][1] - dots[i][1]))
 }
